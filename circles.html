@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PatatapClone</title>
+	<title>Circles</title>
+	<script type="text/javascript" src="paperjs-v0.11.5/dist/paper-full.js"></script>
+	<link rel="stylesheet" type="text/css" href="circles.css">
+	<script type="text/paperscript" canvas="myCanvas">
+
+		
+
+		function onKeyDown(event) {
+			var maxPoint = new Point(view.size.width, view.size.height);
+			var randomPoint = Point.random();
+			var point = randomPoint * maxPoint;
+
+			new Path.Circle(point, 10).fillColor = "yellow";
+			
+		}
+		
+		
+
+	</script>
 </head>
 <body>
-
+	<canvas id="myCanvas"></canvas>
 </body>
 </html>
