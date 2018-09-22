@@ -37,42 +37,44 @@
 		var circles = [];
 
 		function onKeyDown(event) {
-			
-			if (event.key === "a") { sound1.play(); } 
-			if (event.key === "b") { sound2.play(); } 
-			if (event.key === "c") { sound3.play(); } 
-			if (event.key === "d") { sound4.play(); } 
-			if (event.key === "e") { sound5.play(); } 
-			if (event.key === "f") { sound6.play(); } 
-			if (event.key === "g") { sound7.play(); } 
-			if (event.key === "h") { sound8.play(); } 
-			if (event.key === "i") { sound9.play(); } 
-			if (event.key === "j") { sound10.play(); }
-			if (event.key === "k") { sound11.play(); }
-			if (event.key === "l") { sound12.play(); }
-			if (event.key === "m") { sound13.play(); }
-			if (event.key === "n") { sound14.play(); }
-			if (event.key === "o") { sound15.play(); }
-			if (event.key === "p") { sound16.play(); }
-			if (event.key === "q") { sound17.play(); }
-			if (event.key === "r") { sound18.play(); }
-			if (event.key === "s") { sound19.play(); }
-			if (event.key === "t") { sound20.play(); }
-			if (event.key === "u") { sound21.play(); }
-			if (event.key === "v") { sound22.play(); }
-			if (event.key === "w") { sound23.play(); }
-			if (event.key === "x") { sound24.play(); }
-			if (event.key === "y") { sound25.play(); }
-			if (event.key === "z") { sound26.play(); }
+			if (event.key.match(/^[A-Za-z]$/) != null) {
+				var maxPoint = new Point(view.size.width, view.size.height);
+				var randomPoint = Point.random();
+				var point = randomPoint * maxPoint;
+				var circle = new Path.Circle(point, 500);
 
-			var maxPoint = new Point(view.size.width, view.size.height);
-			var randomPoint = Point.random();
-			var point = randomPoint * maxPoint;
-			var circle = new Path.Circle(point, 500);
-			var colors = [0, 0, 0];
-			for (var i = 0; i < 3; i++) colors[i] = Math.floor(255 * Math.random());
-			circle.fillColor = "rgb(" + colors.join(',') + ")";
-			circles.push(circle);	
+				if (event.key === "a") { sound1.play(); } 
+				if (event.key === "b") { sound2.play(); } 
+				if (event.key === "c") { sound3.play(); } 
+				if (event.key === "d") { sound4.play(); } 
+				if (event.key === "e") { sound5.play(); } 
+				if (event.key === "f") { sound6.play(); } 
+				if (event.key === "g") { sound7.play(); } 
+				if (event.key === "h") { sound8.play(); } 
+				if (event.key === "i") { sound9.play(); } 
+				if (event.key === "j") { sound10.play(); }
+				if (event.key === "k") { sound11.play(); }
+				if (event.key === "l") { sound12.play(); }
+				if (event.key === "m") { sound13.play(); }
+				if (event.key === "n") { sound14.play(); }
+				if (event.key === "o") { sound15.play(); }
+				if (event.key === "p") { sound16.play(); }
+				if (event.key === "q") { sound17.play(); }
+				if (event.key === "r") { sound18.play(); }
+				if (event.key === "s") { sound19.play(); }
+				if (event.key === "t") { sound20.play(); }
+				if (event.key === "u") { sound21.play(); }
+				if (event.key === "v") { sound22.play(); }
+				if (event.key === "w") { sound23.play(); }
+				if (event.key === "x") { sound24.play(); }
+				if (event.key === "y") { sound25.play(); }
+				if (event.key === "z") { sound26.play(); }
+
+				var colors = [0, 0, 0];
+				for (var i = 0; i < 3; i++) colors[i] = Math.floor(255 * Math.random());
+				circle.fillColor = "rgb(" + colors.join(',') + ")";
+				circles.push(circle);	
+			}
 		}
 
 		function onFrame() {
@@ -82,9 +84,6 @@
 			}
 		}
 		
-		
-		
-
 	</script>
 </head>
 <body>
